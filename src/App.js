@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import Snowboard from "./Snowboard";
+import SnowboardList from "./SnowboardList";
 
 function App() {
 
@@ -12,18 +12,10 @@ function App() {
     .then(data => setSnowboards(data))
   }, [])
 
-  const boardsToDisplay = snowboards.map(board => {
-    return <Snowboard key={board.id} 
-    id={board.id} 
-    brand={board.brand}
-    price={board.price} 
-    preferredRiding={board.preferred_riding} 
-    directional={board.directional} />
-  })
 
   return (
     <div className="App">
-     {boardsToDisplay}
+     <SnowboardList snowboards={snowboards} />
     </div>
   );
 }

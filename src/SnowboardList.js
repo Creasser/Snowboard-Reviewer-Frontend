@@ -1,8 +1,18 @@
 import React from "react";
+import Snowboard from "./Snowboard";
 
-function SnowboardList({ id, brand, price, preferredRiding, directional }){
+function SnowboardList({ snowboards }){
     return (
-        <div></div>
+        <div>
+          {snowboards.map(board => {
+            return  <Snowboard key={board.id} 
+                    id={board.id} 
+                    brand={board.brand}
+                    price={board.price} 
+                    preferredRiding={board.preferred_riding} 
+                    directional={board.directional} />
+          })}
+        </div>
     )
 }
 
