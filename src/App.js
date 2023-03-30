@@ -10,7 +10,7 @@ function App() {
     fetch("http://localhost:9292/snowboards")
     .then(r => r.json())
     .then(data => setSnowboards(data))
-  })
+  }, [])
 
   const boardsToDisplay = snowboards.map(board => {
     return <Snowboard key={board.id} 
