@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import Snowboard from "./Snowboard";
 
 function App() {
 
@@ -12,12 +13,17 @@ function App() {
   })
 
   const boardsToDisplay = snowboards.map(board => {
-    <h1></h1>
+    return <Snowboard key={board.id} 
+    id={board.id} 
+    brand={board.brand}
+    price={board.price} 
+    preferredRiding={board.preferred_riding} 
+    directional={board.directional} />
   })
 
   return (
     <div className="App">
-     
+     {boardsToDisplay}
     </div>
   );
 }
