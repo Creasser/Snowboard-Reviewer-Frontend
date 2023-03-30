@@ -10,7 +10,8 @@ function SnowboardList({ snowboards }){
                     brand={board.brand}
                     price={board.price} 
                     preferredRiding={board.preferred_riding} 
-                    directional={board.directional} />
+                    directional={board.directional}
+                    img={board.image_url} />
           })}
         </div>
     )
