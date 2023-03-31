@@ -30,3 +30,8 @@ code {
   display: flex;
   justify-content: center;
 }
+
+.boardImage {
+  height: 250px;
+  width: 250px;
+}
