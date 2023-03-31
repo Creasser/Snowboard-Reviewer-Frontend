@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { Route } from "react-router-dom";
+import BoardForm from "./components/BoardForm";
 
 import SnowboardList from "./components/SnowboardList";
 
@@ -18,8 +19,9 @@ function App() {
   return (
     <div className="app">
 
-      
+
         <Route exact path="/">
+          <BoardForm />
           <SnowboardList snowboards={snowboards} />
         </Route>
       
