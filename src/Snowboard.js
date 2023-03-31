@@ -9,7 +9,9 @@ function Snowboard({ id, brand, price, preferredRiding, directional,img }){
             <img src={img}></img>
             <h2>{price}</h2>
             <p>{preferredRiding}</p>
-            <p>{directional ? 'Directional' : 'Split'}</p>
+            <p>{directional ? 'Directional' : 'Twin'}</p>
+            <button>Edit Board Info</button>
+            <button>See Reviews</button>
         </div>
     )
 }
