@@ -3,7 +3,7 @@ import Snowboard from "./Snowboard";
 
 function SnowboardList({ snowboards }){
     return (
-        <div>
+        <div className="snowboardCardContainer">
           {snowboards.map(board => {
             return  <Snowboard key={board.id} 
                     id={board.id} 
