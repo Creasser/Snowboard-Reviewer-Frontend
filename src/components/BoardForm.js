@@ -19,16 +19,53 @@ function BoardForm(){
         })
     }
 
+    function handleSubmit(e){
+        e.preventDefault()
+    }
+
     return (
         <div>
             <h1>Add a New Snowboard to be Reviewed!</h1>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <input
                 type='text'
                 name='brand'
                 value={newBoard.brand}
                 placeholder='Enter Snowboard Brand'
                 onChange={handleChange}
+                ></input>
+                <input
+                type='text'
+                name='price'
+                value={newBoard.price}
+                placeholder='Enter Snowboard price'
+                onChange={handleChange}
+                ></input>
+                <input
+                type='text'
+                name='preferred_riding'
+                value={newBoard.preferred_riding}
+                placeholder='Enter Snowboard preferred riding'
+                onChange={handleChange}
+                ></input>
+                <input
+                type='text'
+                name='image_url'
+                value={newBoard.image_url}
+                placeholder='Enter Snowboard image url'
+                onChange={handleChange}
+                ></input>
+                <input
+                type='text'
+                name='directional'
+                value={newBoard.directional}
+                placeholder='Enter Snowboard directional'
+                onChange={handleChange}
+                ></input>
+                <input
+                type='submit'
+                name='submit'
+                value='Add Board'
                 ></input>
             </form>
         </div>
