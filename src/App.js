@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { Route } from "react-router-dom";
 import BoardForm from "./components/BoardForm";
+import UpdateForm from "./components/UpdateForm";
 
 import SnowboardList from "./components/SnowboardList";
 
@@ -36,7 +37,7 @@ function App() {
         </Route>
 
         <Route exact path='/update/:board_id'>
-          
+          <UpdateForm snowboards={snowboards} />
         </Route>
       
      
