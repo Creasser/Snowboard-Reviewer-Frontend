@@ -6,11 +6,12 @@ function UpdateForm({ snowboards }){
 
 let {board_id} = useParams()
 
-//const boardInfoDisplayed =
+const currentBoard = snowboards.find((board) => board.id == board_id)
+
 
     return (
         <div>
-          {board_id}
+          <div>{`You are updating the ${currentBoard.brand} ${currentBoard.preferred_riding} board!`}</div>
         </div>
     )
 }
