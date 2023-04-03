@@ -1,7 +1,19 @@
 import React from "react";
 
 
-function Snowboard({ id, brand, price, preferredRiding, directional,img }){
+function Snowboard({ id, brand, price, preferredRiding, directional, img, onBoardDelete }){
+
+
+    function handleDelete(id){
+        console.log(id)
+        fetch(`http://localhost:9292/snowboards/${id}`, {
+            method: 'DELETE'
+        })
+
+        onBoardDelete(id)
+    }
+
+
     return (
 
             <div className="snowboardCard">
@@ -10,8 +22,9 @@ function Snowboard({ id, brand, price, preferredRiding, directional,img }){
                 <h2>{price}</h2>
                 <p>{preferredRiding}</p>
                 <p>{directional ? 'Directional' : 'Twin'}</p>
-                <button>Edit Board Info</button>
+                <button>Edit Snowboard Info</button>
                 <button>See Reviews</button>
+                <button onClick={() => handleDelete(id)}>Delete Snowboard</button>
             </div>
        
         

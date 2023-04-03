@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function BoardForm(){
+function BoardForm({addBoardToDb}){
     const [newBoard, setNewBoard] = useState({
         brand: '',
         price: '',
@@ -26,6 +26,24 @@ function BoardForm(){
     function handleSubmit(e){
         e.preventDefault()
         console.log(newBoard)
+
+        let addedBoard = {
+            brand: newBoard.brand,
+            price: newBoard.price,
+            preferred_riding: newBoard.preferred_riding,
+            directional: newBoard.directional,
+            image_url: newBoard.image_url
+        }
+
+        fetch('http://localhost:9292/snowboards', {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify(addedBoard)
+        })
+        .then(r => r.json())
+        .then(data => addBoardToDb(data))
     }
 
     return (

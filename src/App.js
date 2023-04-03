@@ -15,14 +15,22 @@ function App() {
     .then(data => setSnowboards(data))
   }, [])
 
+  function addBoardToDb(board){
+    setSnowboards([...snowboards, board])
+  }
+
+  function handleSnowboardDelete(id){
+
+  }
+
 
   return (
     <div className="app">
 
 
         <Route exact path="/">
-          <BoardForm />
-          <SnowboardList snowboards={snowboards} />
+          <BoardForm addBoardToDb={addBoardToDb} />
+          <SnowboardList snowboards={snowboards} handleSnowboardDelete={handleSnowboardDelete} />
         </Route>
       
      
