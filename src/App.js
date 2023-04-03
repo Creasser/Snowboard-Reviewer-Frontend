@@ -20,7 +20,9 @@ function App() {
   }
 
   function handleSnowboardDelete(id){
+    const updatedSnowboards = snowboards.filter((snowboard) => snowboard.id !== id)
 
+    setSnowboards(updatedSnowboards)
   }
 
 
