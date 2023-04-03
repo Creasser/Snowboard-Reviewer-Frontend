@@ -34,6 +34,10 @@ function App() {
           <BoardForm addBoardToDb={addBoardToDb} />
           <SnowboardList snowboards={snowboards} handleSnowboardDelete={handleSnowboardDelete} />
         </Route>
+
+        <Route exact path='/update/:board_id'>
+          
+        </Route>
       
      
     </div>

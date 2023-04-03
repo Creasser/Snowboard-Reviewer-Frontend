@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 
 function Snowboard({ id, brand, price, preferredRiding, directional, img, onBoardDelete }){
@@ -13,6 +14,10 @@ function Snowboard({ id, brand, price, preferredRiding, directional, img, onBoar
         onBoardDelete(id)
     }
 
+    function handleUpdate(){
+
+    }
+
 
     return (
 
@@ -22,7 +27,7 @@ function Snowboard({ id, brand, price, preferredRiding, directional, img, onBoar
                 <h2>{price}</h2>
                 <p>{preferredRiding}</p>
                 <p>{directional ? 'Directional' : 'Twin'}</p>
-                <button>Edit Snowboard Info</button>
+                <Link to={`/update/${id}`}>Edit Snowboard Info</Link>
                 <button>See Reviews</button>
                 <button onClick={() => handleDelete(id)}>Delete Snowboard</button>
             </div>
