@@ -4,7 +4,7 @@ import Review from "./Review";
 import NewReviewForm from "./NewReviewForm";
 
 
-function SnowboardReviews({ snowboards, handleReviewDelete }){
+function SnowboardReviews({ snowboards, handleReviewDelete, addNewReview }){
 
 let {board_id} = useParams()
 const currentBoard = snowboards.find((board) => board.id == board_id)
@@ -24,7 +24,7 @@ const currentBoard = snowboards.find((board) => board.id == board_id)
             </div>
             <div>
                 <h3>Add a New Review</h3>
-                <NewReviewForm board_id={board_id} />
+                <NewReviewForm board_id={board_id} addNewReview={addNewReview} />
             </div>
             <div>
                 {currentBoard.reviews.map((review) => {

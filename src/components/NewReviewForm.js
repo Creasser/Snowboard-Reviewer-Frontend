@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function NewReviewForm({ board_id }) {
+function NewReviewForm({ board_id, addNewReview }) {
     const [newReview, setNewReview] = useState({
         rating: '',
         snowboard_id: board_id,
@@ -34,7 +34,13 @@ function NewReviewForm({ board_id }) {
             body: JSON.stringify(review)
         })
         .then(r => r.json())
-        .then(data => console.log(data))
+        .then(data => addNewReview(data))
+
+        setNewReview({
+            rating: '',
+            snowboard_id: board_id,
+            comment: ''
+        })
     }
 
     return (
@@ -55,6 +61,7 @@ function NewReviewForm({ board_id }) {
                 <input
                     type="text"
                     name="comment"
+                    value={newReview.comment}
                     placeholder="Enter Comment"
                     onChange={handleChange}>
                 </input>

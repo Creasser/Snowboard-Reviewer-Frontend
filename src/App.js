@@ -39,6 +39,13 @@ function App() {
     setSnowboards(updatedSnowboards)
   }
 
+  function addNewReview(newReview){
+    const currentBoard = snowboards.find((board) => board.id === newReview.snowboard_id)
+    currentBoard.reviews.push(newReview)
+    const updatedSnowboards = snowboards.map((board) => board.id === currentBoard.id ? currentBoard : board)
+    setSnowboards(updatedSnowboards)
+  }
+
 
   //need to setup a new route for reviews
   //route name '/reviews/:id'??
@@ -57,7 +64,7 @@ function App() {
           <UpdateForm snowboards={snowboards} onUpdate={handleSnowboardUpdate} />
         </Route>
         <Route exact path='/reviews/:board_id'>
-          <SnowboardReviews snowboards={snowboards} handleReviewDelete={handleReviewDelete} />
+          <SnowboardReviews snowboards={snowboards} handleReviewDelete={handleReviewDelete} addNewReview={addNewReview} />
         </Route>
         
     </div>
