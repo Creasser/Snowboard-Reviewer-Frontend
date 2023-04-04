@@ -1,14 +1,27 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+
 
 function SnowboardReviews({ snowboards }){
 
 let {board_id} = useParams()
 const currentBoard = snowboards.find((board) => board.id == board_id)
 
+
     return (
         <div>
+            <div className="snowboardCard">
+                <h1>{currentBoard.brand}</h1>
+                <img src={currentBoard.image_url} 
+                alt="Snowboard" 
+                className="boardImage"></img>
+                <h2>{currentBoard.price}</h2>
+                <p>{currentBoard.preferred_riding}</p>
+                <p>{currentBoard.directional ? 'Directional' : 'Twin'}</p>
+            </div>
 
+
+            <Link to='/'>Return to Homepage</Link>
         </div>
     )
 }
