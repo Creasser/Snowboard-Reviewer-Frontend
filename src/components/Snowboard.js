@@ -24,7 +24,7 @@ function Snowboard({ id, brand, price, preferredRiding, directional, img, onBoar
                 <p>{preferredRiding}</p>
                 <p>{directional ? 'Directional' : 'Twin'}</p>
                 <Link to={`/update/${id}`}>Edit Snowboard Info</Link>
-                <button>See Reviews</button>
+                <Link to={`/reviews/${id}`} >See Reviews</Link>
                 <button onClick={() => handleDelete(id)}>Delete Snowboard</button>
             </div>
        

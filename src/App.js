@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Route } from "react-router-dom";
 import BoardForm from "./components/BoardForm";
 import UpdateForm from "./components/UpdateForm";
+import SnowboardReviews from "./components/SnowboardReviews";
 
 import SnowboardList from "./components/SnowboardList";
 
@@ -48,7 +49,7 @@ function App() {
           <UpdateForm snowboards={snowboards} onUpdate={handleSnowboardUpdate} />
         </Route>
         <Route exact path='/reviews/:board_id'>
-          
+          <SnowboardReviews snowboards={snowboards} />
         </Route>
         
     </div>
