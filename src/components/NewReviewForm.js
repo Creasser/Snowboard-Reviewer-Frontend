@@ -19,7 +19,22 @@ function NewReviewForm({ board_id }) {
 
     function handleSubmit(e){
         e.preventDefault()
-        console.log(newReview)
+
+        let review = {
+            rating: newReview.rating,
+            snowboard_id: newReview.snowboard_id,
+            comment: newReview.comment
+        }
+        
+        fetch(`http://localhost:9292/snowboards/${board_id}/reviews`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(review)
+        })
+        .then(r => r.json())
+        .then(data => console.log(data))
     }
 
     return (
