@@ -1,15 +1,12 @@
 import React from "react";
 
-function Review({ review, board_id }){
+function Review({ review, board_id, handleReviewDelete }){
 
-    function handleReviewDelete(id){
-        console.log(id)
-        console.log(board_id)
+    function onDelete(id){
         fetch(`http://localhost:9292/snowboards/${board_id}/reviews/${id}`, {
             method: 'DELETE'
         })
-
-        
+        handleReviewDelete(review)
     }
 
 
@@ -21,7 +18,7 @@ function Review({ review, board_id }){
         <div>
             <h1>{`${review.rating}/10`}</h1>
             <h3>{review.comment}</h3>
-            <button onClick={() => handleReviewDelete(review.id)}>Delete Review</button>
+            <button onClick={() => onDelete(review.id)}>Delete Review</button>
         </div>
     )
 }

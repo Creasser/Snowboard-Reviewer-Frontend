@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import Review from "./Review";
 
 
-function SnowboardReviews({ snowboards }){
+function SnowboardReviews({ snowboards, handleReviewDelete }){
 
 let {board_id} = useParams()
 const currentBoard = snowboards.find((board) => board.id == board_id)
@@ -23,7 +23,7 @@ const currentBoard = snowboards.find((board) => board.id == board_id)
             </div>
             <div>
                 {currentBoard.reviews.map((review) => {
-                    return <Review key={review.id} review={review} board_id={board_id} />
+                    return <Review key={review.id} review={review} board_id={board_id} handleReviewDelete={handleReviewDelete} />
                 })}
             </div>
 
