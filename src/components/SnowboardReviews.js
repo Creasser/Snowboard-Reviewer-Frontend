@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
 import Review from "./Review";
+import NewReviewForm from "./NewReviewForm";
 
 
 function SnowboardReviews({ snowboards, handleReviewDelete }){
@@ -20,6 +21,10 @@ const currentBoard = snowboards.find((board) => board.id == board_id)
                 <h2>{currentBoard.price}</h2>
                 <p>{currentBoard.preferred_riding}</p>
                 <p>{currentBoard.directional ? 'Directional' : 'Twin'}</p>
+            </div>
+            <div>
+                <h3>Add a New Review</h3>
+                <NewReviewForm board_id={board_id} />
             </div>
             <div>
                 {currentBoard.reviews.map((review) => {

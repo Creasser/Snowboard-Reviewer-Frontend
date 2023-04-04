@@ -1,28 +1,31 @@
 import React, { useState } from "react";
 
-function NewReviewForm() {
+function NewReviewForm({ board_id }) {
     const [newReview, setNewReview] = useState({
         rating: '',
-        snowboard_id: '',
+        snowboard_id: board_id,
         comment: ''
     })
 
     function handleChange(e){
         const name = e.target.name
         let value = e.target.value
-        if (e.target.type === "checkbox") {
-            value = e.target.checked
-        }
+
         setNewReview({
             ...newReview,
             [name]: value
         })
     }
 
+    function handleSubmit(e){
+        e.preventDefault()
+        console.log(newReview)
+    }
+
     return (
         <div>
-            <form>
-                <select onChange={handleChange}>
+            <form onSubmit={handleSubmit}>
+                <select name="rating" onChange={handleChange}>
                     <option value='1'>1</option>
                     <option value='2'>2</option>
                     <option value='3'>3</option>
@@ -35,10 +38,16 @@ function NewReviewForm() {
                     <option value='10'>10</option>
                 </select>
                 <input
-                type="text"
-                name="comment"
-                placeholder="Enter Comment"
-                onChange={handleChange}></input>
+                    type="text"
+                    name="comment"
+                    placeholder="Enter Comment"
+                    onChange={handleChange}>
+                </input>
+                <input
+                    type='submit'
+                    name='submit'
+                    value='Add Review'
+                ></input>
             </form>
         </div>
     )
