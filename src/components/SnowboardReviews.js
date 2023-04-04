@@ -1,11 +1,13 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
+import Review from "./Review";
 
 
 function SnowboardReviews({ snowboards }){
 
 let {board_id} = useParams()
 const currentBoard = snowboards.find((board) => board.id == board_id)
+console.log(currentBoard.reviews)
 
 
     return (
@@ -19,7 +21,11 @@ const currentBoard = snowboards.find((board) => board.id == board_id)
                 <p>{currentBoard.preferred_riding}</p>
                 <p>{currentBoard.directional ? 'Directional' : 'Twin'}</p>
             </div>
-
+            <div>
+                {currentBoard.reviews.map((review) => {
+                    return <Review review={review} />
+                })}
+            </div>
 
             <Link to='/'>Return to Homepage</Link>
         </div>
