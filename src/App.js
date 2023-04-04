@@ -30,6 +30,13 @@ function App() {
     setSnowboards(updatedSnowboards)
   }
 
+
+  //need to setup a new route for reviews
+  //route name '/reviews/:id'??
+  //can get the review id from the individual review card to be able to update and delete the review
+  //CRUD request will have to go through something like '/snowboards/:id/reviews' or '/snowboards/:id/reviews/:id
+
+
   return (
     <div className="app">
         <Route exact path="/">
@@ -40,6 +47,7 @@ function App() {
         <Route exact path='/update/:board_id'>
           <UpdateForm snowboards={snowboards} onUpdate={handleSnowboardUpdate} />
         </Route>
+        
     </div>
   );
 }
