@@ -7,7 +7,7 @@ function SnowboardReviews({ snowboards }){
 
 let {board_id} = useParams()
 const currentBoard = snowboards.find((board) => board.id == board_id)
-console.log(currentBoard.reviews)
+
 
 
     return (
@@ -23,7 +23,7 @@ console.log(currentBoard.reviews)
             </div>
             <div>
                 {currentBoard.reviews.map((review) => {
-                    return <Review review={review} />
+                    return <Review key={review.id} review={review} board_id={board_id} />
                 })}
             </div>
 
