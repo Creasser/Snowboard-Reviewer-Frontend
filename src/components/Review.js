@@ -4,6 +4,11 @@ function Review({ review, board_id }){
 
     function handleReviewDelete(id){
         console.log(id)
+        console.log(board_id)
+        fetch(`http://localhost:9292/snowboards/${board_id}/reviews/${id}`, {
+            method: 'DELETE'
+        })
+
         
     }
 
