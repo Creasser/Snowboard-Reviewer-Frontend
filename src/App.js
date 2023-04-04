@@ -47,6 +47,9 @@ function App() {
         <Route exact path='/update/:board_id'>
           <UpdateForm snowboards={snowboards} onUpdate={handleSnowboardUpdate} />
         </Route>
+        <Route exact path='/reviews/:board_id'>
+          
+        </Route>
         
     </div>
   );
