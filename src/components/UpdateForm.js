@@ -33,6 +33,13 @@ function handleChange(e){
 function handleSubmit(e){
     e.preventDefault()
     console.log(updatedBoard)
+    let updatedBoardData = {
+        brand: updatedBoard.brand,
+        price: updatedBoard.price,
+        preferred_riding: updatedBoard.preferred_riding,
+        directional: updatedBoard.directional,
+        image_url: updatedBoard.image_url
+    }
 }
 
 
