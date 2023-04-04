@@ -26,6 +26,10 @@ function App() {
     setSnowboards(updatedSnowboards)
   }
 
+  function handleSnowboardUpdate(updatedBoard){
+
+  }
+
 
   return (
     <div className="app">
@@ -37,7 +41,7 @@ function App() {
         </Route>
 
         <Route exact path='/update/:board_id'>
-          <UpdateForm snowboards={snowboards} />
+          <UpdateForm snowboards={snowboards} onUpdate={handleSnowboardUpdate} />
         </Route>
       
      

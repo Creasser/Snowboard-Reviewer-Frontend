@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 
-function UpdateForm({ snowboards }){
+function UpdateForm({ snowboards, onUpdate }){
 let {board_id} = useParams()
 const currentBoard = snowboards.find((board) => board.id == board_id)
 
@@ -40,6 +40,8 @@ function handleSubmit(e){
         directional: updatedBoard.directional,
         image_url: updatedBoard.image_url
     }
+
+    fetch()
 }
 
 
