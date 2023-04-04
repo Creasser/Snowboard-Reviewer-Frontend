@@ -27,7 +27,7 @@ function App() {
   }
 
   function handleSnowboardUpdate(updatedBoard){
-    const updatedSnowboards = snowboards.map((board) => board === updatedBoard.id ? updatedBoard : board)
+    const updatedSnowboards = snowboards.map((board) => board.id === updatedBoard.id ? updatedBoard : board)
 
     setSnowboards(updatedSnowboards)
   }

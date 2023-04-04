@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 
 function UpdateForm({ snowboards, onUpdate }){
 let {board_id} = useParams()
 const currentBoard = snowboards.find((board) => board.id == board_id)
+const history = useHistory()
 
 const [updatedBoard, setUpdatedBoard] = useState({
     brand: currentBoard.brand,
@@ -49,7 +50,9 @@ function handleSubmit(e){
         body: JSON.stringify(updatedBoardData)
     })
     .then(r => r.json())
-    .then(newUpdatedBoard => onUpdate(newUpdatedBoard))
+    .then(newUpdatedBoard => {
+        history.push('/')
+        onUpdate(newUpdatedBoard)})
 }
 
 
@@ -95,7 +98,7 @@ function handleSubmit(e){
                 <input
                     type='submit'
                     name='submit'
-                    value='Add Board'
+                    value='Update Board Info'
                 ></input>
           </form>
         </div>
