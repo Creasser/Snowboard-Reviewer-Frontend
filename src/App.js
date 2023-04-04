@@ -22,31 +22,24 @@ function App() {
 
   function handleSnowboardDelete(id){
     const updatedSnowboards = snowboards.filter((snowboard) => snowboard.id !== id)
-
     setSnowboards(updatedSnowboards)
   }
 
   function handleSnowboardUpdate(updatedBoard){
     const updatedSnowboards = snowboards.map((board) => board.id === updatedBoard.id ? updatedBoard : board)
-
     setSnowboards(updatedSnowboards)
   }
 
-
   return (
     <div className="app">
-
-
         <Route exact path="/">
           <BoardForm addBoardToDb={addBoardToDb} />
-          <SnowboardList snowboards={snowboards} handleSnowboardDelete={handleSnowboardDelete} />
+          <SnowboardList snowboards={snowboards} 
+          handleSnowboardDelete={handleSnowboardDelete} />
         </Route>
-
         <Route exact path='/update/:board_id'>
           <UpdateForm snowboards={snowboards} onUpdate={handleSnowboardUpdate} />
         </Route>
-      
-     
     </div>
   );
 }

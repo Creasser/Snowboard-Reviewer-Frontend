@@ -14,26 +14,20 @@ const [updatedBoard, setUpdatedBoard] = useState({
     image_url: currentBoard.image_url
 })
 
-
-
 function handleChange(e){
     const name = e.target.name
     let value = e.target.value
-
     if (e.target.type === "checkbox") {
         value = e.target.checked
     }
-
     setUpdatedBoard({
         ...updatedBoard,
         [name]: value
     })
-
 }
 
 function handleSubmit(e){
     e.preventDefault()
-    console.log(updatedBoard)
     let updatedBoardData = {
         brand: updatedBoard.brand,
         price: updatedBoard.price,
@@ -41,7 +35,6 @@ function handleSubmit(e){
         directional: updatedBoard.directional,
         image_url: updatedBoard.image_url
     }
-
     fetch(`http://localhost:9292/snowboards/${board_id}`, {
         method: 'PATCH',
         headers: {
@@ -54,7 +47,6 @@ function handleSubmit(e){
         history.push('/')
         onUpdate(newUpdatedBoard)})
 }
-
 
     return (
         <div>
