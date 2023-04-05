@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 
 function Review({ review, board_id, handleReviewDelete }){
-
+    const [editReview, setEditReview] = useState(false)
     function onDelete(id){
         fetch(`http://localhost:9292/snowboards/${board_id}/reviews/${id}`, {
             method: 'DELETE'
@@ -19,6 +19,7 @@ function Review({ review, board_id, handleReviewDelete }){
             <h1>{`${review.rating}/10`}</h1>
             <h3>{review.comment}</h3>
             <button onClick={() => onDelete(review.id)}>Delete Review</button>
+
         </div>
     )
 }

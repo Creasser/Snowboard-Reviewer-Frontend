@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 function BoardForm({addBoardToDb}){
     const [newBoard, setNewBoard] = useState({
@@ -91,6 +92,7 @@ function BoardForm({addBoardToDb}){
                     value='Add Board'
                 ></input>
             </form>
+            
         </div>
     )
 }

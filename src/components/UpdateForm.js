@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams, useHistory, Link } from "react-router-dom";
 
 function UpdateForm({ snowboards, onUpdate }){
 let {board_id} = useParams()
@@ -93,6 +93,7 @@ function handleSubmit(e){
                     value='Update Board Info'
                 ></input>
           </form>
+          <Link to='/'>Return to home</Link>
         </div>
     )
 }
