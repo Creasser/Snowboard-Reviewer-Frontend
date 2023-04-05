@@ -11,7 +11,9 @@
 ## Installation
 
 * To begin using this application, you first need to fork and clone both this repo and the backend repo which can be found [here](https://github.com/Creasser/Snowboard-Reviewer-Backend)
-* Once both repositorys are locally installed and opened on your machine, run ``` bundle install ``` in the backend repo to install all the backend dependencies for the application. Do the same for the frontend repo, but run ``` npm install ``` instead to download all the frontend dependencies.
+* Once both repositorys are locally installed and opened on your machine, run ``` bundle install ``` in the backend repo ternmial to install all the backend dependencies for the application. Do the same for the frontend repo, but run ``` npm install ``` instead to download all the frontend dependencies.
+* After the dependencies are installed, seed the database by running ``` bundle exec rake db:seed ``` in the backend terminal.
+* Then start the server by running ``` bundle exec rake server ```.
 
 ## Frontend User Interactions
 
