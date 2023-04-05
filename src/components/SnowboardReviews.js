@@ -3,13 +3,10 @@ import { Link, useParams } from "react-router-dom";
 import Review from "./Review";
 import NewReviewForm from "./NewReviewForm";
 
-
 function SnowboardReviews({ snowboards, handleReviewDelete, addNewReview, updateReview }){
 
 let {board_id} = useParams()
 const currentBoard = snowboards.find((board) => board.id == board_id)
-
-
 
     return (
         <div>
