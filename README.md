@@ -10,7 +10,8 @@
 
 ## Installation
 
-* To begin using this application, you first need to fork and clone this repo and the backend repo which can be found [here](https://github.com/Creasser/Snowboard-Reviewer-Backend)
+* To begin using this application, you first need to fork and clone both this repo and the backend repo which can be found [here](https://github.com/Creasser/Snowboard-Reviewer-Backend)
+* Once both repositorys are locally installed and opened on your machine, run ``` bundle install ``` in the backend repo to install all the backend dependencies for the application. Do the same for the frontend repo, but run ``` npm install ``` instead to download all the frontend dependencies.
 
 ## Frontend User Interactions
 
