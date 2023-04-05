@@ -19,7 +19,10 @@ function Review({ review, board_id, handleReviewDelete }){
             <h1>{`${review.rating}/10`}</h1>
             <h3>{review.comment}</h3>
             <button onClick={() => onDelete(review.id)}>Delete Review</button>
-
+            <button onClick={() => setEditReview(!editReview)}>Edit Review</button>
+            <div>
+                {editReview ? 'Review Active' : 'Inactive'}
+            </div>
         </div>
     )
 }
