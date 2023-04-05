@@ -7,12 +7,14 @@
   * Sinatra
 * React.js
   * React Router
-  * MaterialUI
 
+## Installation
 
-## Desired User Interactions
+* To begin using this application, you first need to fork and clone this repo and the backend repo which can be found [here](https://github.com/Creasser/Snowboard-Reviewer-Backend)
 
-* The user will be able to add snowboards to the db
+## Frontend User Interactions
+
+* The user will be able to add snowboards to the database through a controlled form
   * When adding the user will input the brand, price, image, directional status, and preferred riding conditiion
     * This will be sent to backend via various localhost/9797 routes
 * The user will also be able to make a review for newly added boards and pre-existing boards
