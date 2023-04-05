@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
-function EditReview(){
+function EditReview({ review }){
     const [editedReview, setEditReview] = useState({
         rating: '',
-        snowboard_id: '',
+        snowboard_id: review.snowboard_id,
         comment: ''
     })
 
@@ -11,15 +11,28 @@ function EditReview(){
         const name = e.target.name
         let value = e.target.value
 
-        setNewReview({
-            ...newReview,
+        setEditReview({
+            ...editedReview,
             [name]: value
         })
     }
 
+    function handleSubmit(e){
+        e.preventDefault()
+        console.log(editedReview)
+        
+        let newEditedReview = {
+            rating: editedReview.rating,
+            snowboard_id: editedReview.snowboard_id,
+            comment: editedReview.comment
+        }
+
+        fetch(`http://localhost:9292/snowboards/${review.snowboard_id}/reviews/${review.id}`)
+    }
+
     return (
         <div>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <select name="rating" onChange={handleChange}>
                         <option value='1'>1</option>
                         <option value='2'>2</option>
@@ -36,7 +49,7 @@ function EditReview(){
                         type="text"
                         name="comment"
                         value={editedReview.comment}
-                        placeholder="Enter Comment"
+                        placeholder="Update Comment"
                         onChange={handleChange}>
                     </input>
                     <input
