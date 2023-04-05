@@ -47,9 +47,9 @@ function App() {
   }
 
   function updateReview(updatedReview){ 
-    const currentBoard = snowboards.find((board) => board.id === updateReview.snowboard_id)
-    const currentReview = currentBoard.reviews.find((review) => review.id === updateReview.id)
-    currentReview = updateReview
+    const currentBoard = snowboards.find((board) => board.id === updatedReview.snowboard_id)
+    const upReviews = currentBoard.reviews.map((review) => review.id === updatedReview.id ? updatedReview : review)
+    currentBoard.reviews = upReviews
     const updatedSnowboards = snowboards.map((board) => board.id === currentBoard.id ? currentBoard : board)
     setSnowboards(updatedSnowboards)
   }
