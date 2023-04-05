@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function EditReview({ review, updateReview }){
+function EditReview({ review, updateReview, showEdit }){
     const [editedReview, setEditReview] = useState({
         rating: '',
         snowboard_id: review.snowboard_id,
@@ -35,6 +35,8 @@ function EditReview({ review, updateReview }){
         })
         .then(r => r.json())
         .then(reviewData => updateReview(reviewData))
+
+        showEdit(false)
     }
 
     return (
