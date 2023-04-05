@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import EditReview from "./EditReview";
 
-function Review({ review, board_id, handleReviewDelete }){
+function Review({ review, board_id, handleReviewDelete, updateReview }){
     const [showEditReview, setshowEditReview] = useState(false)
     function onDelete(id){
         fetch(`http://localhost:9292/snowboards/${board_id}/reviews/${id}`, {
@@ -22,7 +22,7 @@ function Review({ review, board_id, handleReviewDelete }){
             <button onClick={() => onDelete(review.id)}>Delete Review</button>
             <button onClick={() => setshowEditReview(!showEditReview)}>Edit Review</button>
             <div>
-                {showEditReview ? <EditReview review={review} /> : null}
+                {showEditReview ? <EditReview review={review} updateReview={updateReview} /> : null}
             </div>
         </div>
     )

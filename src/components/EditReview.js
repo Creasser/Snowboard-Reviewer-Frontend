@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function EditReview({ review }){
+function EditReview({ review, updateReview }){
     const [editedReview, setEditReview] = useState({
         rating: '',
         snowboard_id: review.snowboard_id,
@@ -19,7 +19,6 @@ function EditReview({ review }){
 
     function handleSubmit(e){
         e.preventDefault()
-        console.log(editedReview)
         
         let newEditedReview = {
             rating: editedReview.rating,
@@ -27,7 +26,15 @@ function EditReview({ review }){
             comment: editedReview.comment
         }
 
-        fetch(`http://localhost:9292/snowboards/${review.snowboard_id}/reviews/${review.id}`)
+        fetch(`http://localhost:9292/snowboards/${review.snowboard_id}/reviews/${review.id}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newEditedReview)
+        })
+        .then(r => r.json())
+        .then(reviewData => updateReview(reviewData))
     }
 
     return (
@@ -55,7 +62,7 @@ function EditReview({ review }){
                     <input
                         type='submit'
                         name='submit'
-                        value='Add Review'
+                        value='Update Review'
                     ></input>
             </form>
         </div>
