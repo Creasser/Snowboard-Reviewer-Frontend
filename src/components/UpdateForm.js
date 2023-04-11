@@ -50,10 +50,11 @@ function handleSubmit(e){
 
     return (
         <div>
-          <div>{`You are updating the ${currentBoard.brand} ${currentBoard.preferred_riding} board!`}</div>
+          <div className="currentBoardInfo">{`You are updating the ${currentBoard.brand} ${currentBoard.preferred_riding} board!`}</div>
           <form onSubmit={handleSubmit}>
           <input
                     type='text'
+                    className="formInput"
                     name='brand'
                     value={updatedBoard.brand}
                     placeholder='Enter Snowboard Brand'
@@ -61,12 +62,13 @@ function handleSubmit(e){
                 ></input>
                 <input
                     type='text'
+                    className="formInput"
                     name='price'
                     value={updatedBoard.price}
                     placeholder='Enter Snowboard price'
                     onChange={handleChange}
                 ></input>
-               <select name="preferred_riding" onChange={handleChange}>
+               <select name="preferred_riding" className="formInput" onChange={handleChange}>
                     <option value='Mountain'>Mountain</option>
                     <option value='Park'>Park</option>
                     <option value='Back Country'>Back Country</option>
@@ -74,6 +76,7 @@ function handleSubmit(e){
                </select>
                 <input
                     type='text'
+                    className="formInput"
                     name='image_url'
                     value={updatedBoard.image_url}
                     placeholder='Enter Snowboard image url'
@@ -86,9 +89,10 @@ function handleSubmit(e){
                     value={updatedBoard.directional}
                     onChange={handleChange}
                 ></input>
-                <label>Directional?</label>
+                <label className="checkText">Directional?</label>
                 <input
                     type='submit'
+                    className="formInput"
                     name='submit'
                     value='Update Board Info'
                 ></input>

@@ -54,3 +54,10 @@ code {
 .checkText {
   margin-right: 3px;
 }
+
+.currentBoardInfo {
+  font-size: 30px;
+  margin-bottom: 20px;
+  padding-top: 10px;
+  font-weight: bold;
+}
