@@ -51,6 +51,7 @@ function BoardForm({addBoardToDb}){
             <h1>Add a New Snowboard to be Reviewed!</h1>
             <form onSubmit={handleSubmit}>
                 <input
+                    className="formInput"
                     type='text'
                     name='brand'
                     value={newBoard.brand}
@@ -58,19 +59,21 @@ function BoardForm({addBoardToDb}){
                     onChange={handleChange}
                 ></input>
                 <input
+                    className="formInput"
                     type='text'
                     name='price'
                     value={newBoard.price}
                     placeholder='Enter Snowboard price'
                     onChange={handleChange}
                 ></input>
-               <select name="preferred_riding" onChange={handleChange}>
+               <select name="preferred_riding" className="formInput" onChange={handleChange}>
                     <option value='Mountain'>Mountain</option>
                     <option value='Park'>Park</option>
                     <option value='Back Country'>Back Country</option>
                     <option value='Universal'>Universal</option>
                </select>
                 <input
+                    className="formInput"
                     type='text'
                     name='image_url'
                     value={newBoard.image_url}
@@ -78,14 +81,16 @@ function BoardForm({addBoardToDb}){
                     onChange={handleChange}
                 ></input>
                 <input
+                    className="formInput"
                     type='checkbox'
                     name='directional'
                     id="directional"
                     value={newBoard.directional}
                     onChange={handleChange}
                 ></input>
-                <label>Directional?</label>
+                <label className="checkText">Directional?</label>
                 <input
+                    className="formInput"
                     type='submit'
                     name='submit'
                     value='Add Board'
