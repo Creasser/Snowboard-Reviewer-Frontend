@@ -61,3 +61,28 @@ code {
   padding-top: 10px;
   font-weight: bold;
 }
+
+.boardLinks {
+  text-decoration: none;
+  color: black;
+  border: 2px solid;
+  margin-bottom: 5px;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.boardLinks:hover,
+.deleteBoardBtn:hover {
+  background-color: black;
+  color: white;
+}
+
+.deleteBoardBtn {
+  background: none;
+  text-decoration: none;
+  color: black;
+  border: 2px solid;
+  margin-bottom: 5px;
+  padding: 5px;
+  border-radius: 10px;
+}

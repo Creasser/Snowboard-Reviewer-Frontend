@@ -21,9 +21,9 @@ function Snowboard({ id, brand, price, preferredRiding, directional, img, onBoar
                 <h2>${price}</h2>
                 <p>{preferredRiding}</p>
                 <p>{directional ? 'Directional' : 'Twin'}</p>
-                <Link to={`/update/${id}`}>Edit Snowboard Info</Link>
-                <Link to={`/reviews/${id}`} >See Reviews</Link>
-                <button onClick={() => handleDelete(id)}>Delete Snowboard</button>
+                <Link to={`/update/${id}`} className="boardLinks">Edit Snowboard Info</Link>
+                <Link to={`/reviews/${id}`} className="boardLinks" >See Reviews</Link>
+                <button onClick={() => handleDelete(id)} className="deleteBoardBtn">Delete Snowboard</button>
             </div>
        
         
