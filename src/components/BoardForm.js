@@ -47,7 +47,7 @@ function BoardForm({addBoardToDb}){
     }
 
     return (
-        <div>
+        <div className="boardForm">
             <h1>Add a New Snowboard to be Reviewed!</h1>
             <form onSubmit={handleSubmit}>
                 <input
