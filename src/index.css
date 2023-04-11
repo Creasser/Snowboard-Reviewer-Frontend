@@ -24,6 +24,7 @@ code {
 
 .snowboardCardContainer {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .app {
